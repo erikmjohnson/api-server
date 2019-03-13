@@ -1,4 +1,4 @@
-'use strict';
+  'use strict';
 
 /**
  * API Router Module (V1)
@@ -36,7 +36,7 @@ router.delete('/api/v1/:model/:id', handleDelete);
  * @param next {function} Express middleware next()
  */
 function handleGetAll(request,response,next) {
-  request.model.get()
+  return request.model.get()
     .then( data => {
       const output = {
         count: data.length,
@@ -55,7 +55,7 @@ function handleGetAll(request,response,next) {
  * @param next {function} Express middleware next()
  */
 function handleGetOne(request,response,next) {
-  request.model.get(request.params.id)
+  return request.model.get(request.params.id)
     .then( result => response.status(200).json(result[0]) )
     .catch( next );
 }
@@ -68,7 +68,7 @@ function handleGetOne(request,response,next) {
  * @param next {function} Express middleware next()
  */
 function handlePost(request,response,next) {
-  request.model.post(request.body)
+  return request.model.post(request.body)
     .then( result => response.status(200).json(result) )
     .catch( next );
 }
@@ -81,7 +81,7 @@ function handlePost(request,response,next) {
  * @param next {function} Express middleware next()
  */
 function handlePut(request,response,next) {
-  request.model.put(request.params.id, request.body)
+  return request.model.put(request.params.id, request.body)
     .then( result => response.status(200).json(result) )
     .catch( next );
 }
@@ -94,7 +94,7 @@ function handlePut(request,response,next) {
  * @param next {function} Express middleware next()
  */
 function handleDelete(request,response,next) {
-  request.model.delete(request.params.id)
+  return request.model.delete(request.params.id)
     .then( result => response.status(200).json(result) )
     .catch( next );
 }

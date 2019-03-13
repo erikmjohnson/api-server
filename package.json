@@ -37,5 +37,8 @@
   "bugs": {
     "url": "https://github.com/erikmjohnson/api-server/issues"
   },
-  "homepage": "https://github.com/erikmjohnson/api-server#readme"
+  "homepage": "https://github.com/erikmjohnson/api-server#readme",
+  "devDependencies": {
+    "jsdoc": "^3.5.5"
+  }
 }

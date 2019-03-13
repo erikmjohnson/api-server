@@ -6,7 +6,7 @@
  */
 
 const cwd = process.cwd();
-
+  
 // 3rd Party Resources
 const express = require('express');
 const cors = require('cors');
@@ -26,6 +26,7 @@ app.use(morgan('dev'));
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+app.use('/docs', express.static(js))
 
 // Routes
 app.use(v1Router);
