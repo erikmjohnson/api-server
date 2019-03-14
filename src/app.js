@@ -26,7 +26,6 @@ app.use(morgan('dev'));
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-app.use('/docs', express.static(js))
 
 // Routes
 app.use(v1Router);

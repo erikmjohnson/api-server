@@ -9,6 +9,7 @@ LAB 09
 ### Links and Resources
 * [repo](https://github.com/erikmjohnson/data_modeling)
 * [travis](https://travis-ci.com/erikmjohnson/data_modeling)
+* [heroku](https://lab-09-api-server.herokuapp.com/)
 
 ### Modules
 #### server.js

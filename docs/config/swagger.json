@@ -1,0 +1,110 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Lab 09, continuation on learning documentation",
+    "version": "1.0.0",
+    "title": "API Server"
+  },
+  "paths": {
+    "/api/v1/:model": {
+      "get": {
+        "description": "Get all stored information in particular model ",
+        "responses": {
+          "200": {
+            "description": "Return a list of all objects within a model",
+            "schema": {
+              "$ref": "#/definitions/Players"
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Creates a new model data",
+        "responses": {
+          "200": {
+            "description": "new model has been created",
+            "schema": {
+              "$ref": "#/definitions/Players"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/:model{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "type": "integer"
+        }
+      ],
+      "get": {
+        "description": "Selects one model by Id",
+        "responses": {
+          "200": {
+            "description": "Returns specified model",
+            "schema": {
+              "$ref": "#/definitions/Players"
+            }
+          }
+        }
+      },
+      "put": {
+        "description": "Selects one model by Id, and updates model",
+        "responses": {
+          "200": {
+            "description": "model has been updated",
+            "schema": {
+              "$ref": "#/definitions/Players"
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "Selects one model by Id, and deletes it ",
+        "responses": {
+          "200": {
+            "description": "model is deleted",
+            "schema": {
+              "$ref": "#/definitions/Players"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Players": {
+      "required" : [ "category", "name", "display_name", "description" ],
+      "properties" : {
+        "id" : {
+          "type" : "number"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "position" : {
+          "type" : "string",
+          "enum" : ["P","C","1B","2B","3B","SS","LF","RF","CF"]
+        },
+        "throws" : {
+          "type" : "string",
+          "enum" : ["R","L"]
+        },
+        "bats" : {
+          "type" : "string",
+          "enum": ["R","L"]
+        },
+        "team" : {
+          "type" : "string"
+        }
+      }
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ]
+}
