@@ -2,8 +2,8 @@
 
 const rootDir = process.cwd();
 const supergoose = require('./supergoose.js');
-const {server} = require(`${rootDir}/src/app.js`);
-const mockRequest = supergoose.server(server);
+const {app} = require(`${rootDir}/src/app.js`);
+const mockRequest = supergoose.server(app);
 
 beforeAll(supergoose.startDB);
 afterAll(supergoose.stopDB);
@@ -16,7 +16,7 @@ describe('api server', () => {
       .get('/foo')
       .then(results => {
         expect(results.status).toBe(404);
-      });
+      }).catch(err => console.log(err));
 
   });
 

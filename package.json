@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "lint": "eslint **/*.js",
-    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json",
+    "jsdoc": "jsdoc -c ./docs/config/jsodocs.config.json",
     "test": "jest --verbose",
     "test-watch": "jest --watchAll --verbose"
   },
@@ -25,6 +25,7 @@
     "mongoose": "^5.4.2",
     "mongoose-schema-jsonschema": "^1.2.1",
     "morgan": "^1.9.1",
+    "nodemon": "^1.18.10",
     "require-directory": "^2.1.1",
     "supertest": "^3.3.0",
     "swagger-ui-express": "^4.0.2",
@@ -37,5 +38,8 @@
   "bugs": {
     "url": "https://github.com/erikmjohnson/api-server/issues"
   },
-  "homepage": "https://github.com/erikmjohnson/api-server#readme"
+  "homepage": "https://github.com/erikmjohnson/api-server#readme",
+  "devDependencies": {
+    "jsdoc": "^3.5.5"
+  }
 }
