@@ -2,7 +2,7 @@ LAB 09
 ==============================================
 
 ## LAB 09
-[![Build Status](https://travis-ci.com/erikmjohnson/data_modeling.svg?branch=master)
+![Build Status](https://travis-ci.com/erikmjohnson/api-server.svg?branch=master)
 
 ### Author: Erik M Johnson
 
