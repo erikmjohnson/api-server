@@ -30,7 +30,7 @@
         }
       }
     },
-    "/api/v1/:model{id}": {
+    "/api/v1/:model/:id": {
       "parameters": [
         {
           "in": "path",
@@ -76,7 +76,6 @@
   },
   "definitions": {
     "Players": {
-      "required" : [ "category", "name", "display_name", "description" ],
       "properties" : {
         "id" : {
           "type" : "number"
